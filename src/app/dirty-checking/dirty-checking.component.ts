@@ -1,4 +1,5 @@
 import { Component,  Input, DoCheck, ChangeDetectionStrategy } from '@angular/core';
+import { Agent } from 'http';
 
 @Component({
   selector: 'app-dirty-checking',
@@ -8,14 +9,22 @@ import { Component,  Input, DoCheck, ChangeDetectionStrategy } from '@angular/co
 })
 export class DirtyCheckingComponent implements DoCheck {
 
-  @Input() user: any;
   index = 0;
+  name = '焦威禄';
+  age = '12';
+  oldage = this.age;
+  oldname = this.name;
+  hobbies = ['无不同'];
 
 
   constructor() { }
 
   ngDoCheck() {
-    this.index++;
-    console.log('view被执行', this.index);
+    if(this.name !==this.oldname){
+      this.hobbies.push(`检查出不同，原来的内容是"${this.oldname}",现在的内容是"${this.name}"`)
+    }
+    if(this.age !==this.oldage){
+      this.hobbies.push(`检查出不同，原来的内容是"${this.oldage}",现在的内容是"${this.age}"`)
+    }
   }
 }

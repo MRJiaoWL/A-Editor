@@ -1,7 +1,11 @@
 <p>
-  {{user.getName()}}
+ sddssdsdssd
 </p>
 
-<p>
-  {{user.getAge()}}
-</p>
+<input [(ngModel)]="name" placeholder="name"/>
+<input [(ngModel)]="age" placeholder="name"/>
+
+<ul>
+  <li *ngFor="let hobby of hobbies; let i=index">
+      {{i+1}}:{{hobby}} </li>
+</ul>

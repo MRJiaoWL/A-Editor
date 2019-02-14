@@ -1,20 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
-
-class User {
-  _age = 25;
-  _name = 'vincent';
-
-  getAge() {
-    console.log('执行获取age');
-    return this._age;
-  }
-
-  getName() {
-    console.log('执行获取name');
-    return this._name;
-  }
-}
 
 @Component({
   selector: 'app-root',
@@ -22,15 +8,12 @@ class User {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(
+    private router: Router,
+    public element: ElementRef
+  ){}
   title = 'Tour of Heroes';
-  index = 0;
-
-  user = new User;
   change() {
-  }
-
-  ngDoCheck() {
-    this.index++;
-    console.log('app被执行', this.index);
+    this.router.navigate(['dirtyChecking']);
   }
 }
