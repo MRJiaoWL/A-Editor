@@ -15,6 +15,7 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule, httpClientInMemBackendServiceFactory } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { JiaoSearchComponent } from './jiao-search/jiao-search.component';
+import { DirtyCheckingComponent } from './dirty-checking/dirty-checking.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { JiaoSearchComponent } from './jiao-search/jiao-search.component';
     MessagesComponent,
     DashboardComponent,
     JiaoSearchComponent,
+    DirtyCheckingComponent,
   ],
   imports: [
     BrowserModule,
