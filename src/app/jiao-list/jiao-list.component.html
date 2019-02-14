@@ -1,0 +1,25 @@
+<h2>JIaoList</h2>
+
+<div>
+    <label>英雄名称:
+      <input #heroName />
+    </label>
+    <button (click)="add(heroName.value); heroName.value=''">
+      add
+    </button>
+  </div>
+
+
+<ul class="heroes">
+  <li *ngFor="let jiao of jiaolist" >
+      <a routerLink="/detail/{{jiao.id}}">
+    <span class="badge">{{jiao.id}}</span>{{jiao.name}}
+    </a>
+    <button class="delete" title="delete hero"
+       (click)="delete(jiao)">X</button>
+  </li>
+</ul>
+
+
+
+<!-- <app-jiao-detail [hero]="selectedHero"></app-jiao-detail> -->

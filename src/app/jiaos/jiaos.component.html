@@ -1,0 +1,15 @@
+<h2>{{jiao.name | uppercase}} Details</h2>
+<div><span>id: </span>{{jiao.id}}</div>
+<div>
+  <label>name:
+    <input [(ngModel)]="jiao.name" placeholder="name">
+  </label>
+</div>
+<div>
+  <label>英雄名称:
+    <input #heroName />
+  </label>
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>

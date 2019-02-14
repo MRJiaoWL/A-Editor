@@ -1,0 +1,9 @@
+<h3>英雄列表</h3>
+<div class="gird gird-pad">
+  <a *ngFor="let jiao of jiaos" class="col-1-4" routerLink="/detail/{{jiao.id}}">
+    <div class="module hero">
+      <h4>{{jiao.name}}</h4>
+    </div>
+  </a>
+</div>
+<app-jiao-search></app-jiao-search>
