@@ -1,5 +1,4 @@
 import { Component,  Input, DoCheck, ChangeDetectionStrategy } from '@angular/core';
-import { Agent } from 'http';
 
 @Component({
   selector: 'app-dirty-checking',
