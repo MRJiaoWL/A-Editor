@@ -8,8 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class CheckTestComponent implements OnInit {
 
-  favoriteColorControl = new FormControl('');
-  favoriteColor = '';
+  favoriteColorControl = new FormControl('红色');
+  favoriteColor = '红色';
   constructor() { }
 
   ngOnInit() {
