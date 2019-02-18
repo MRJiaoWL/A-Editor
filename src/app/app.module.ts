@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -16,6 +16,9 @@ import { HttpClientInMemoryWebApiModule, httpClientInMemBackendServiceFactory } 
 import { InMemoryDataService } from './in-memory-data.service';
 import { JiaoSearchComponent } from './jiao-search/jiao-search.component';
 import { DirtyCheckingComponent } from './dirty-checking/dirty-checking.component';
+import { CheckTestComponent } from './check-test/check-test.component';
+import { NameEditorComponent } from './name-editor/name-editor.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,12 @@ import { DirtyCheckingComponent } from './dirty-checking/dirty-checking.componen
     DashboardComponent,
     JiaoSearchComponent,
     DirtyCheckingComponent,
+    CheckTestComponent,
+    NameEditorComponent,
+    ProfileEditorComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,

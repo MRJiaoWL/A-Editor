@@ -1,29 +1,27 @@
-import { Component,  Input, DoCheck, ChangeDetectionStrategy } from '@angular/core';
-
+import { Component, OnInit, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dirty-checking',
   templateUrl: './dirty-checking.component.html',
-  styleUrls: ['./dirty-checking.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./dirty-checking.component.css']
 })
-export class DirtyCheckingComponent implements DoCheck {
+export class DirtyCheckingComponent {
+  constructor(
 
-  index = 0;
-  name = '焦威禄';
-  age = '12';
-  oldage = this.age;
-  oldname = this.name;
-  hobbies = ['无不同'];
+    private router: Router,
+    public element: ElementRef
+  ) { }
 
+  powers = ['Really Smart', 'Super Flexible', 'Weather Changer'];
 
-  constructor() { }
-
-  ngDoCheck() {
-    if(this.name !==this.oldname){
-      this.hobbies.push(`检查出不同，原来的内容是"${this.oldname}",现在的内容是"${this.name}"`)
-    }
-    if(this.age !==this.oldage){
-      this.hobbies.push(`检查出不同，原来的内容是"${this.oldage}",现在的内容是"${this.age}"`)
-    }
+  hero = {name: 'Dr.', alterEgo: 'Dr. What', power: this.powers[0]};
+  back(name,age,power){
+    if(name.dirty ===false && age.dirty ===false && power.dirty ===false){
+      debugger;
+      this.router.navigate(['dashboard']);
+    } 
+    else(
+      alert('已做出更改，是否保存')
+    )
   }
 }
